@@ -154,6 +154,10 @@ footer{margin-top:56px;border-top:1px solid var(--rule)}
 .rq .by{font-size:.88rem;color:var(--muted)}
 @media (max-width:900px){.rq{grid-template-columns:minmax(0,1fr)}}
 .interests{font-size:.95rem;color:var(--soft)}
+.cur-h{margin-bottom:-8px}
+.cur{margin:0;padding-left:1.15em;display:grid;gap:5px}
+.cur li{padding-left:2px}
+.cur li::marker{color:var(--accent)}
 .interests .k{display:block;font-size:.82rem;font-weight:600;color:var(--muted)}
 .authors .adv{color:var(--muted)}
 .chips{display:flex;flex-wrap:wrap;gap:6px}
@@ -197,7 +201,6 @@ footer{margin-top:56px;border-top:1px solid var(--rule)}
       <ul>
         <li><a href="#research">Research</a></li>
         <li><a href="#design">Design</a></li>
-        <li><a href="#news">News</a></li>
         <li><a href="#service">Service</a></li>
         <li><a href="#teaching">Teaching</a></li>
         <li><a href="cv.pdf">CV</a></li>
@@ -211,11 +214,19 @@ footer{margin-top:56px;border-top:1px solid var(--rule)}
 
   <section class="intro" aria-labelledby="intro-h">
     <div class="bio">
-      <h1 class="h1" id="intro-h">What should an AI assistant communicate through touch, and when should it stay silent?</h1>
-      <p>I’m <b>Mihir Sharma</b>, a designer turned HCI researcher. I study how intelligent systems can communicate <b>actionable information, uncertainty and errors through touch</b>, particularly for <b>blind and low-vision people</b>. My work asks three connected questions: what touch can communicate, when a system should interrupt, and how uncertain assistance should shape a person’s decisions.</p>
-      <p>I came to research through design. For my MFA at the <a href="https://www.collegeforcreativestudies.edu/">College for Creative Studies</a> in Detroit, I built <b>TactileGrip</b>, climbing holds that beep as a hand gets close and vibrate when it grips. In a preliminary gym evaluation, ten blindfolded sighted expert climbers each got further up the route than with verbal guidance alone, and their partners gave no hold-level directions. That result made me ask what else touch could carry.</p>
-      <p>I work through physical prototypes, analysis of real-world datasets and computational modelling. From 2022 to 2024, as a designer, I also ran studies with people: 20 interviews and a gym evaluation for TactileGrip, a 40-person VR study and 12 co-design sessions with farmers. Since 2026 I have worked as an independent researcher. <b>Three of my papers are under review</b>, at ACM IUI, ACM CHIIR and PACM IMWUT, and a fourth is in preparation. None of the AI work has yet been tested with blind and low-vision people; that validation is what I want to do in a PhD, starting in 2027.</p>
-      <p class="interests"><span class="k">Research interests</span> Haptic and multisensory interaction · Accessible computing · Human–AI interaction · Wearable computing · Uncertainty communication</p>
+      <h1 class="h1" id="intro-h">I build touch interfaces that let AI assistants speak to blind and low-vision people without taking over their hearing.</h1>
+      <p>I’m <b>Mihir Sharma</b>, an independent HCI researcher with a background in product and interaction design. My research interests lie in <b>haptic and wearable interfaces</b> and <b>human–AI interaction</b>, particularly for <b>blind and low-vision people</b>. Assistive AI answers almost everything by speech, which occupies the same ear a blind person uses to cross a street. I study which answers a vibration can carry instead, when a device should interrupt, and how it can signal that it is unsure.</p>
+      <p class="cur-h">Currently, I am working on:</p>
+      <ul class="cur">
+        <li>encoding AI answers as vibration rhythms a blind user can learn (<a href="#p-felt">Can a Buzz Answer That?</a>, under review at ACM IUI 2027)</li>
+        <li>limiting how often a wearable buzzes its wearer by mistake (<a href="#p-truetap">TrueTap</a>, under review at PACM IMWUT)</li>
+        <li>measuring whether people act on AI confidence they feel rather than see (<a href="#p-material">Material Confidence</a>, under review at ACM CHIIR 2027)</li>
+        <li>deciding what a navigation assistant should tell a blind pedestrian, and when (<a href="#p-senseshift">SenseShift</a>, in progress)</li>
+      </ul>
+      <p>All four are built and evaluated computationally on real datasets and prototypes. None has yet been tested with blind and low-vision people, and that validation is what I want to do in a PhD, starting in 2027.</p>
+      <p>I received my MFA in User Experience Design, with Distinction, from the <a href="https://www.collegeforcreativestudies.edu/">College for Creative Studies</a>, Detroit, advised by Prof. Predrag K. Nikolić. My thesis, <a href="#p-grip"><b>TactileGrip</b></a>, embedded real-time sensing and feedback in climbing holds. An HC-SR04 ultrasonic sensor sampled every 50&nbsp;ms drives a proximity beep that quickens from 50&nbsp;cm to 5&nbsp;cm; contact cuts the beep and fires a single vibration pulse; pulse-gated star holds announce progress aloud, all on an Arduino Nano inside the hold. I designed it from 20 interviews with blind and low-vision climbers, guides, coaches and gym staff. In a preliminary gym evaluation, all ten blindfolded sighted expert climbers completed more of the route than with verbal guidance alone (p&nbsp;=&nbsp;.002), and their partners gave no hold-level directions.</p>
+      <p>Before my MFA, I received a B.Des in Product Design from the University of Petroleum and Energy Studies, India, and completed a UX program at IIT Bombay. After it, I worked at Ecosphere Organics, a small materials startup in Detroit, where I researched turning agricultural bio-waste such as banana peels, corn husks and coffee grounds into biodegradable composites, testing compositions and exploring composites with embedded micro-sensors and reactive pigments that sense moisture, decay and temperature. I now work as an independent researcher.</p>
+      <p>Beyond research, I led UX for <a href="#p-vangard">Vangard</a>, a General Motors–sponsored self-driving car concept that GM shortlisted; co-created <a href="#p-detrotune">Motown Techno</a>, a VR piece exhibited at Ars Electronica 2023; and designed <a href="#p-farmacy">Farmacy</a>, a farming app nominated for a UX Design Award. Design taught me to build things; research is how I find out why they work.</p>
       <div class="contact">
         <a href="cv.pdf">Curriculum Vitae (CV)</a>
         <a href="https://msharma.framer.website">Design portfolio</a>
@@ -408,27 +419,6 @@ footer{margin-top:56px;border-top:1px solid var(--rule)}
         <p class="links"><a href="https://msharma.framer.website/projects/farmacy">Project page ↗</a></p>
       </div>
     </article>
-  </section>
-
-  <section class="sec" id="news" aria-labelledby="news-h">
-    <h2 class="sec-h" id="news-h">News</h2>
-    <table class="news">
-      <tbody>
-        <tr><td>Nov 2026</td><td><a href="#p-truetap">TrueTap</a> submitted to PACM IMWUT (November 2026 round).</td></tr>
-        <tr><td>Oct 2026</td><td><a href="#p-material">Material Confidence</a> submitted to ACM CHIIR 2027 as a short paper.</td></tr>
-        <tr><td>Oct 2026</td><td><a href="#p-felt">Can a Buzz Answer That?</a> submitted to ACM IUI 2027 Posters.</td></tr>
-        <tr><td>2026</td><td>Reviewed papers for ACM AutomotiveUI 2026 and UbiComp/ISWC 2026.</td></tr>
-        <tr><td>2026</td><td>Started independent research on touch and AI with <a href="#p-senseshift">SenseShift</a>.</td></tr>
-        <tr><td>2025</td><td>Joined Ecosphere Organics in Detroit as Material Sustainability Assistant, researching bio-waste composites with built-in sensors.</td></tr>
-        <tr><td>2024</td><td>Invited talk at the Scarab Club Symposium on AI and the Arts, Detroit.</td></tr>
-        <tr><td>2024</td><td>Graduated with an MFA, with Distinction, and named Gold Medalist. <a href="#p-grip">TactileGrip</a> received the Thesis Select Award and a <a href="https://ux-design-awards.com/winners/2024-2-tactilegrip">UX Design Award nomination</a>.</td></tr>
-        <tr><td>Summer 2024</td><td>General Motors shortlisted <a href="#p-vangard">Vangard</a>; we were one of two teams invited to refine it with GM designers.</td></tr>
-        <tr><td>Sep 2023</td><td><a href="#p-detrotune">Motown Techno</a> shown in the <a href="https://ars.electronica.art/who-owns-the-truth/en/detro-tune/">Detro Tune exhibition at Ars Electronica</a>, Linz, and at Detroit Month of Design.</td></tr>
-        <tr><td>2023</td><td><a href="#p-farmacy">Farmacy</a> nominated for a UX Design Award, Berlin.</td></tr>
-        <tr><td>2023</td><td>Led co-design workshops on a Ford Motor Company × HFLI mobility prototype.</td></tr>
-        <tr><td>2022</td><td>Started the MFA in UX Design at the College for Creative Studies, Detroit, after a UX program at IIT Bombay.</td></tr>
-      </tbody>
-    </table>
   </section>
 
   <section class="sec" id="service" aria-labelledby="service-h">
