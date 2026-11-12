@@ -62,6 +62,18 @@ b,strong{font-weight:700}
 .sec-h{font-size:1.6rem;line-height:1.2;letter-spacing:-.015em;margin-bottom:14px}
 .sec-h.ruled{padding-bottom:10px;border-bottom:2px solid var(--accent);margin-bottom:18px}
 .sec-h em{font-style:normal;color:var(--accent);display:inline-block}
+.sec-sub{font-size:.9rem;color:var(--muted);margin:-8px 0 20px}
+.sec-sub b{font-weight:600;color:var(--soft)}
+.evt{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;font-size:.88rem;line-height:1.5;color:var(--soft)}
+.evt>b{font-size:.74rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
+.evt .tag{display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:1px 10px 1px 8px;font-size:.8rem;font-weight:600;white-space:nowrap}
+.evt .tag::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor}
+.evt .tag.yes{background:#E6EEFB;color:var(--accent-ink)}
+.evt .tag.no{background:#F0EFEC;color:#5E5E5E}
+.synth{margin-top:34px;background:var(--tint);border-radius:6px;padding:24px 28px;display:grid;gap:10px}
+.synth h3{font-size:1.2rem;line-height:1.3}
+.synth p{font-size:1rem;line-height:1.7;color:#262626;max-width:52em}
+@media (max-width:600px){.synth{padding:20px 18px}}
 .sec-note{color:var(--muted);font-size:.93rem;line-height:1.6;max-width:44em;margin-bottom:12px}
 
 /* news */
@@ -178,6 +190,7 @@ footer{margin-top:56px;border-top:1px solid var(--rule)}
 /* research questions */
 .rq{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px 40px;margin:4px 0 18px}
 .rq>div{min-width:0;border-top:2px solid var(--ink);padding-top:12px}
+.rq .k{font-family:var(--mono);font-size:.76rem;letter-spacing:.06em;color:var(--accent);margin-bottom:4px}
 .rq h3{font-size:1.08rem;line-height:1.35}
 .rq p{font-size:.93rem;line-height:1.55;color:var(--soft);margin-top:6px}
 .rq .by{font-size:.88rem;color:var(--muted)}
@@ -383,11 +396,12 @@ footer{margin-top:56px;border-top:1px solid var(--rule)}
   </section>
 
   <section class="sec" id="research" aria-labelledby="research-h">
-    <h2 class="sec-h ruled" id="research-h">Research: <em>Adaptive Haptic Communication for Accessible Human–AI Interaction</em></h2>
+    <h2 class="sec-h ruled" id="research-h">Research: <em>what AI should communicate through touch, and when it should stay silent</em></h2>
+    <p class="sec-sub"><b>Research area</b> · Adaptive Haptic Communication for Accessible Human–AI Interaction</p>
     <div class="rq">
-      <div><h3>What can touch communicate?</h3><p>Whether a small vocabulary of vibration patterns can carry answers, spatial guidance or AI confidence that people can learn and interpret.</p><p class="by"><a href="#p-grip">TactileGrip</a> · <a href="#p-felt">Can a Buzz Answer That?</a> · <a href="#p-material">Material Confidence</a></p></div>
-      <div><h3>When should a system communicate?</h3><p>How sensing systems can put important information first, limit false alerts and avoid needless interruptions.</p><p class="by"><a href="#p-truetap">TrueTap</a> · <a href="#p-senseshift">SenseShift</a></p></div>
-      <div><h3>How should people act on uncertain assistance?</h3><p>How felt uncertainty shapes reliance on AI, and how an assistant should say that it cannot tell.</p><p class="by"><a href="#p-material">Material Confidence</a> · <a href="#p-felt">Can a Buzz Answer That?</a></p></div>
+      <div><p class="k">WHAT</p><h3>What information can touch reliably convey?</h3><p>Encoding answers, spatial cues and uncertainty.</p><p class="by"><a href="#p-felt">Can a Buzz Answer That?</a> · <a href="#p-grip">TactileGrip</a> · <a href="#p-senseshift">SenseShift</a></p></div>
+      <div><p class="k">WHEN</p><h3>When is an interruption worth someone’s attention?</h3><p>Prioritizing signals, limiting errors and avoiding overload.</p><p class="by"><a href="#p-truetap">TrueTap</a> · <a href="#p-senseshift">SenseShift</a></p></div>
+      <div><p class="k">TRUST</p><h3>How does felt uncertainty influence reliance on AI?</h3><p>Measuring interpretation, confidence and decisions.</p><p class="by"><a href="#p-material">Material Confidence</a> · <a href="#p-felt">Can a Buzz Answer That?</a></p></div>
     </div>
     <p class="sec-note">All papers are sole-authored. Posted PDFs are submitted manuscripts under review, not peer-reviewed publications. Each paper states what has and has not been tested with people, includes code that recomputes every reported number, and discloses how I used AI tools, including Claude. I will link the code repositories once review anonymity allows.</p>
 
@@ -399,6 +413,7 @@ footer{margin-top:56px;border-top:1px solid var(--rule)}
         <p class="venue"><b>PACM IMWUT</b> Journal <span class="st">· submitted Nov 2026, under review</span></p>
         <h3>TrueTap: Budgeting How Often a Smartwatch Buzzes You by Mistake</h3>
         <p class="authors"><b>Mihir Sharma</b></p>
+        <p class="evt"><b>Evidence</b><span>Computational evaluation on public datasets</span><span class="tag no">Not yet tested with people</span></p>
         <ul class="qcel">
           <li class="q"><b>Question</b><span>How can a smartwatch keep its false buzzes within a limit each wearer chooses?</span></li>
           <li><b>Contribution</b><span>A calibration method that sets the activity detector’s threshold so that only a chosen share of wearers go over their false-buzz budget, with a finite-sample guarantee. Released as a Python library and a browser runtime.</span></li>
@@ -415,6 +430,7 @@ footer{margin-top:56px;border-top:1px solid var(--rule)}
         <p class="venue"><b>ACM IUI 2027</b> Poster <span class="st">· submitted Oct 2026, under review</span></p>
         <h3>Can a Buzz Answer That? How Much of What Blind People Ask a Visual Assistant Fits a Vibration Vocabulary</h3>
         <p class="authors"><b>Mihir Sharma</b></p>
+        <p class="evt"><b>Evidence</b><span>Dataset classification and phone prototype</span><span class="tag no">Not yet tested with people</span></p>
         <ul class="qcel">
           <li class="q"><b>Question</b><span>How many of the questions blind people ask a visual assistant could be answered by vibration instead of speech?</span></li>
           <li><b>Contribution</b><span>A small vibration vocabulary for yes, no, numbers, colours, “can’t tell” and “unsure”; rules for when to buzz and when to speak; and Felt Answers, an offline phone prototype that plays every rhythm.</span></li>
@@ -431,6 +447,7 @@ footer{margin-top:56px;border-top:1px solid var(--rule)}
         <p class="venue"><b>ACM CHIIR 2027</b> Short Paper <span class="st">· submitted Oct 2026, under review</span></p>
         <h3>Material Confidence: Which Outcomes Can Tell Felt from Seen AI Confidence?</h3>
         <p class="authors"><b>Mihir Sharma</b></p>
+        <p class="evt"><b>Evidence</b><span>Secondary-data analysis and simulation</span><span class="tag no">Not yet tested with people</span></p>
         <ul class="qcel">
           <li class="q"><b>Question</b><span>If an AI’s confidence is felt as a vibration instead of seen on a screen, which study outcome can show whether people use it?</span></li>
           <li><b>Contribution</b><span>A design analysis that picks the outcome before any data are collected, plus a study protocol ready for preregistration, a web study app and band firmware.</span></li>
@@ -451,6 +468,7 @@ footer{margin-top:56px;border-top:1px solid var(--rule)}
         <h3>TactileGrip: Real-time Sensor-Embedded Climbing Holds for Non-Visual Route Navigation</h3>
         <p class="authors"><b>Mihir Sharma</b> <span class="adv">· Thesis advisor: <a href="http://www.predragnikolic.com/">Predrag K. Nikolić</a></span></p>
         <ul class="awards"><li><span><b>Winner</b>, Thesis Select Award, College for Creative Studies, 2024</span></li><li><span><b>Nominee</b>, UX Design Awards, New Talent, Berlin, 2024</span></li></ul>
+        <p class="evt"><b>Evidence</b><span>Physical prototype, 20 interviews, and a preliminary study with 10 blindfolded sighted climbers</span><span class="tag yes">Tested with people</span></p>
         <ul class="qcel">
           <li class="q"><b>Question</b><span>Can climbing holds guide the hand directly, giving blind and low-vision climbers more independence from a guide’s spoken directions?</span></li>
           <li><b>Contribution</b><span>Working holds with one cue for each moment: a beep that quickens as the hand approaches, a vibration on grip, a hold shape that points to the next hold, and star-shaped holds that announce progress aloud. Built with an Arduino Nano, an ultrasonic sensor read every 50&nbsp;ms, a vibration motor and 3D-printed forms.</span></li>
@@ -470,6 +488,7 @@ footer{margin-top:56px;border-top:1px solid var(--rule)}
         <p class="venue"><b>Manuscript</b> Full paper <span class="st">· in preparation</span></p>
         <h3>SenseShift: Adaptive AI&#8209;to&#8209;Tactile Communication for Blind and Low-Vision People</h3>
         <p class="authors"><b>Mihir Sharma</b></p>
+        <p class="evt"><b>Evidence</b><span>Computational simulation and software prototype</span><span class="tag no">Not yet tested with people</span></p>
         <ul class="qcel">
           <li class="q"><b>Question</b><span>What should a navigation assistant tell blind and low-vision pedestrians, and how can it do so without competing with the sounds they rely on?</span></li>
           <li><b>Contribution</b><span>An interruption policy that predicts how close each object will come, and a vibration code for a six-pod forearm band. Python and browser versions make identical decisions on 5,753 test frames.</span></li>
@@ -479,6 +498,12 @@ footer{margin-top:56px;border-top:1px solid var(--rule)}
         <p class="led">Grew out of <a href="#p-grip">TactileGrip</a>.</p>
       </div>
     </article>
+
+    <div class="synth">
+      <h3>What connects this work</h3>
+      <p>These projects examine different decisions an assistive AI system must make before communicating through touch: which information can be encoded, which events deserve an interruption, and how uncertainty should be represented and evaluated.</p>
+      <p>My next step is to bring these components together in a working wearable system and investigate them with blind and low-vision participants. I am particularly interested in how tactile communication affects attention, interpretation and appropriate reliance on AI in everyday environments.</p>
+    </div>
   </section>
 
   <section class="sec" id="design" aria-labelledby="design-h">
